@@ -1,0 +1,41 @@
+{
+	"name": "iidx.me Helper", 
+	"description": "투덱미 갱신하기 귀찮은 당신을 위한 해결책입니다.",
+	"version": "0.2",
+	"manifest_version": 2,
+	"icons": {
+		"16": "16.png",
+		"128": "128.png"
+	},
+	"app": {
+		"launch": {
+			"local_path": "main.html",
+			"width": 600,
+			"height": 600
+		}
+	},
+	"content_scripts": [{
+		"matches": ["*://p.eagate.573.jp/*"],
+		"js": ["jquery-2.1.4.min.js", "inject.js"]
+	}],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"web_accessible_resources": ["options.html"],
+	"options_ui": {
+		// Required.
+		"page": "options.html",
+		// Recommended.
+		"chrome_style": true
+		// Not recommended; only provided for backwards compatibility,
+		// and will be unsupported in a future version of Chrome (TBD).
+		//"open_in_tab": true
+	},
+	"options_page": "options.html",
+	"permissions": [
+		"storage",
+        "tabs",
+        "contextMenus",
+        "*://p.eagate.573.jp/*"
+	]
+}
