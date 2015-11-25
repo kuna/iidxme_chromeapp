@@ -1,7 +1,7 @@
 {
 	"name": "iidx.me Helper", 
 	"description": "투덱미 갱신하기 귀찮은 당신을 위한 해결책입니다.",
-	"version": "0.2",
+	"version": "0.21",
 	"manifest_version": 2,
 	"icons": {
 		"16": "16.png",

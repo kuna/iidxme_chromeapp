@@ -20,6 +20,7 @@ function useCard(cardid) {
 	$("td.eapass_detach a").each(function (i, obj) {
 		if (obj.href.indexOf(cardid) >= 0) {
 			window.location.href=obj.href;
+			window.location.replace(obj.href);	// for mobile
 			return;
 		}
 	});
@@ -41,7 +42,9 @@ function iidxme(id, pw) {
 $(function() {
 	logined = false;
 	// check login status
-	if ($("#head_info_box").length) {
+	if ($("a[href='/gate/p/logout.html']").length
+ || $("a[href='/gate/p/logout.html?___REDIRECT=1']").length
+ || $("#head_info_box").length) {
 		logined = true;
 	}
 
